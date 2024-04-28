@@ -45,5 +45,3 @@ export default function PossibleMoves(to) {
   }
   return possiblemoves;
 }
-
-console.log(PossibleMoves([3, 1]));
