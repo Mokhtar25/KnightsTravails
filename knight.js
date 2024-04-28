@@ -1,16 +1,6 @@
 // empty 0 // visited 1 // knight 2
 
-const board = Array(8)
-  .fill(0)
-  .map(() => Array(8).fill(0));
-
-board[3][3] = 1;
-
-function PossibleMoves(x, y) {
-  const array = Array(8)
-    .fill(0)
-    .map(() => Array(8).fill(0));
-
+export default function PossibleMoves(x, y) {
   const possiblemoves = [];
   // upleft
   if (y + 2 < 8 && x + 1 < 8) {
@@ -53,4 +43,3 @@ function PossibleMoves(x, y) {
   }
   return possiblemoves;
 }
-console.log(PossibleMoves(1, 1));
