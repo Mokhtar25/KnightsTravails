@@ -5,11 +5,16 @@ function Node(data) {
   return { value, next };
 }
 
-function LinkedList() {
+export default function LinkedList() {
   let head = null;
   let tail = null;
   let index = -1;
 
+  const make = (array) => {
+    array.forEach((element) => {
+      push(element);
+    });
+  };
   const push = (data) => {
     const newNode = Node(data);
     if (head === null) {
@@ -32,6 +37,7 @@ function LinkedList() {
     } catch (e) {
       return e;
     }
+    return false;
   };
   const shift = () => {
     const tmp = head;
@@ -49,7 +55,7 @@ function LinkedList() {
     console.log(head, "\n", tail, index);
   };
 
-  return { head, tail, push, shift, del, print, findSquare };
+  return { head, tail, make, push, shift, del, print, findSquare };
 }
 
 // const ara = LinkedList();
