@@ -2,6 +2,7 @@
 // given square and the square wanted. 6 maximum times for the knight to move to any square. or try a linked list
 // and save the nodes in a hash map and find the shortest possible moves. make puckets and put all the possible moves and
 // try to get every possible move in a hasmap and a linkde list and try to save the stuff into the hash map
+// removing everything and make a new tree with the possible moves and then depth first searsch it.
 
 import PossibleMoves from "./knight.js";
 import HashMap from "./hashmap.js";
