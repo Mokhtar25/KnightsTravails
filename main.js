@@ -7,53 +7,54 @@
 import PossibleMoves from "./knight.js";
 import HashMap from "./hashmap.js";
 import LinkedList from "./linkedlists.js";
+import Tree from "./tree.bdp.js";
 
 function Findshortest(from, to) {
   if (compare(from, to)) return from;
 
   const moves = PossibleMoves(from);
-
-  while (moves.length !== 0) {
-    const cur = moves.shift();
-    console.log(find(cur));
-    // let cur = moves.shift();
-    //
-    // console.log(cur);
-    // const hmap = HashMap();
-    // const possible = PossibleMoves(cur);
-    // const linked = LinkedList();
-    // linked.make(possible);
-    // linked.print();
-    //
-    // console.log(linked.findSquare(to));
-  }
-}
-let path = [];
-
-let times = 0;
-function find(item, to) {
-  if (compare(item, to)) return to;
-  const moves = PossibleMoves(item);
-
+  const tree = Tree(moves);
   while (moves.length !== 0) {
     const cur = moves.shift();
     const newmoves = PossibleMoves(cur);
-
-    path.push(cur);
     newmoves.forEach((e) => {
-      path.push(e);
-      times++;
-      if (times > 8) {
-      } else {
-        find(e, to);
-
-        times = 0;
-        path = [];
-      }
+      tree.insert(tree.getroot(), e);
+      const other = PossibleMoves(e);
+      other.forEach((s) => {
+        tree.insert(tree.getroot(), s);
+      });
     });
   }
-}
 
+  // console.log(tree.getarry());
+  console.log(tree.find(to));
+}
+// let path = []
+//
+// let times = 0;
+// function find(item, to) {
+//   if (compare(item, to)) return to;
+//   const moves = PossibleMoves(item);
+//
+//   while (moves.length !== 0) {
+//     const cur = moves.shift();
+//     const newmoves = PossibleMoves(cur);
+//
+//     path.push(cur);
+//     newmoves.forEach((e) => {
+//       path.push(e);
+//       times++;
+//       if (times > 8) {
+//       } else {
+//         find(e, to);
+//
+//         times = 0;
+//         path = [];
+//       }
+//     });
+//   }
+// }
+//
 function compare(from, to) {
   if (from[0] === to[0] && from[1] === to[1]) {
     return true;
@@ -62,6 +63,5 @@ function compare(from, to) {
   }
 }
 
-// Findshortest([1, 1], [5, 1]);
-find([1, 1], [5, 1]);
-console.log(path, times);
+Findshortest([1, 1], [3, 2]);
+// find([1, 1], [5, 1]);
