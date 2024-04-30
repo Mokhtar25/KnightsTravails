@@ -3,6 +3,10 @@
 // and save the nodes in a hash map and find the shortest possible moves. make puckets and put all the possible moves and
 // try to get every possible move in a hasmap and a linkde list and try to save the stuff into the hash map
 // removing everything and make a new tree with the possible moves and then depth first searsch it.
+// sort the array first this way it can be easier to fin the move you want to take. and to check weather the next mov
+// is possible you can add all the moves first and check if the cordients of the move are out of sope with a filter scope
+// no need to alot of if statments
+//
 
 import PossibleMoves from "./knight.js";
 import HashMap from "./hashmap.js";
