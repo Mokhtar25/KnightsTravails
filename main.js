@@ -7,6 +7,8 @@
 // is possible you can add all the moves first and check if the cordients of the move are out of sope with a filter scope
 // no need to alot of if statments
 //
+// rethink the entire problem, you are making it way too complicaited. take a step back and rethink it. the solution can
+// than a couple of 80 lines complete. and use the bored to make the solution happen. currently it is under utlize.
 
 import PossibleMoves from "./knight.js";
 import HashMap from "./hashmap.js";
