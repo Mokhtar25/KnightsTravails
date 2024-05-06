@@ -11,9 +11,6 @@
 // than a couple of 80 lines complete. and use the bored to make the solution happen. currently it is under utlize.
 
 import PossibleMoves from "./knight.js";
-import HashMap from "./hashmap.js";
-import LinkedList from "./linkedlists.js";
-import Tree from "./tree.bdp.js";
 
 function Findshortest(from, to) {
   if (compare(from, to)) return from;

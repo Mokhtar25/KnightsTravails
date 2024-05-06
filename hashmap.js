@@ -14,3 +14,5 @@ export default function HashMap() {
 
   return { array, slots, index, add };
 }
+
+console.log("test");
