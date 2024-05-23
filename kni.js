@@ -1,6 +1,7 @@
 import PossibleMoves from "./knight.js";
+// finding the path is possible. to do is find the shortest path and find a dircet path without any garabge
 
-console.log(find([1, 1], [7, 7]));
+console.log(find([1, 1], [3, 2]));
 
 function find(po1, po2) {
   if (cmp(po1, po2)) return po1;
@@ -8,12 +9,13 @@ function find(po1, po2) {
   const stack = [];
   const moves = PossibleMoves(po1);
   moves.map((e) => stack.push(e));
+  console.log(moves);
   let visited = [];
 
   let path = [];
 
   debugger;
-  while (stack.length !== 1) {
+  while (stack.length !== 0) {
     let cur = stack.shift();
     if (!isIn(visited, cur)) {
       path.push(cur);
@@ -24,6 +26,7 @@ function find(po1, po2) {
       }
       let newmoves = PossibleMoves(cur);
       newmoves.map((e) => stack.push(e));
+      // path = path.filter((e) => !cmp(e, cur));
     }
   }
 }
