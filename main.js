@@ -30,7 +30,6 @@ function Findshortest(from, to) {
   }
 
   // console.log(tree.getarry());
-  console.log(tree.find(to));
 }
 // let path = []
 //
